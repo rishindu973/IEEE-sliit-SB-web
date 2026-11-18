@@ -151,7 +151,8 @@ const TEAMS_DATA = [
     id: 4,
     teamName: 'Membership Development Team',
     members: [
-      { id: 2, name: 'Lakitha Keshan Gunawantha', position: 'Team Lead', image: membershipImages.lakitha, linkedin: '#' }
+      { id: 1, name: 'Lakitha Keshan Gunawantha', position: 'Team Lead', image: membershipImages.lakitha, linkedin: '#' },
+      { id: 2, name: 'Binuka Weerawardhana', position: 'Team Member', image: membershipImages.binuka, linkedin: 'https://www.linkedin.com/in/binuka-damhiru-weerawardhana/' }
     ]
   },
   {

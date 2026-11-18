@@ -100,7 +100,20 @@ export default function Home() {
       <ol className="journey-steps">
         <li className="step"><h3>Start as a Volunteer</h3><p>Get involved, meet new people, and discover your interests within IEEE SLIIT.</p></li>
         <li className="step"><h3>Volunteer in an Event Organizing Committee (OC)</h3><p>Help organize exciting events while building teamwork and practical skills.</p></li>
-        <li className="step"><h3>Become an Official IEEE SLIIT Member</h3><p>Unlock more opportunities to learn, connect, and grow with IEEE.</p></li>
+        <li className="step">
+          <h3>Become an Official IEEE SLIIT Member</h3>
+          <p>Unlock more opportunities to learn, connect, and grow with IEEE.</p>
+          <div className="step-actions">
+            <a
+              className="button step-button"
+              href="https://youtu.be/39DyfYj9bFw?si=3QU-uB9eLHqt01Y4"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              How to join
+            </a>
+          </div>
+        </li>
         <li className="step"><h3>Join IEEE SLIIT Committee</h3><p>Develop leadership skills and help shape the future of IEEE SLIIT. <Link to="/committee">Meet the current committee</Link></p></li>
         <li className="step"><h3>Grow into the IEEE Sri Lanka Section</h3><p>Explore new opportunities through SLSAC, Young Professionals, and technical chapters.</p><div className="section-communities"><a className="community-logo-link slsac-logo-link" href="https://www.ieee.lk/governance/standing-committee/slsac" target="_blank" rel="noopener noreferrer"><img src={slsacLogo} alt="SLSAC" loading="lazy" decoding="async" /></a><a className="community-logo-link community-logo-wide" href="https://www.ieee.lk/communities/yp" target="_blank" rel="noopener noreferrer"><img src={youngProfessionalsLogo} alt="IEEE Young Professionals" loading="lazy" decoding="async" /></a><a className="community-text-link" href="https://www.ieee.lk/" target="_blank" rel="noopener noreferrer">Technical Chapters</a></div></li>
         <li className="step"><h3>Connect with the Global IEEE Community</h3><p>Connect with students and professionals worldwide and expand your horizons.</p></li>

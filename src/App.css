@@ -423,9 +423,9 @@ button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible,
 }
 .awards {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 22px;
-  margin-top: 32px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 36px;
 }
 .award {
   border-block: 1px solid var(--line);
@@ -2616,25 +2616,31 @@ button:focus-visible, a:focus-visible, input:focus-visible,
 /* Each logo, title and social row shares the same position across society cards. */
 .chapter {
   display: grid;
-  grid-template-rows: 140px minmax(66px, 1fr) 44px;
-  gap: 18px;
-  padding: 24px 20px;
-  min-height: 330px;
+  grid-template-rows: 110px minmax(54px, 1fr) 40px;
+  gap: 14px;
+  padding: 20px 18px 18px;
+  min-height: 280px;
 }
 .chapter-logo {
   width: 100%;
-  height: 140px;
+  height: 110px;
   min-height: 0;
   margin: 0;
 }
 .chapter-logo img {
   width: 100%;
-  height: 110px;
+  height: 88px;
   max-height: none;
   object-fit: contain;
   object-position: center;
 }
-.chapter h3 { margin: 0; min-height: 0; align-self: center; }
+.chapter h3 {
+  margin: 0;
+  min-height: 0;
+  align-self: start;
+  display: block;
+  text-align: center;
+}
 .chapter-actions { margin: 0; align-self: end; }
 @media (max-width: 720px) {
   [data-page="contact"] .contact-info { padding-block: 0; }
@@ -2764,47 +2770,71 @@ main:focus {
 }
 .awards .award {
   position: relative;
-  isolation: isolate;
-  min-height: 480px;
+  display: flex;
   flex-direction: column;
-  justify-content: flex-end;
+  justify-content: flex-start;
   align-items: stretch;
   padding: 0;
-  border: 1px solid #11285020;
-  border-radius: 28px;
-  background: var(--deep);
+  border: 1px solid rgba(17, 40, 80, 0.08);
+  border-radius: 24px;
+  background: #ffffff;
   overflow: hidden;
-  box-shadow: 0 12px 28px #11285012;
+  box-shadow: 0 4px 18px rgba(17, 40, 80, 0.06);
   gap: 0;
+  min-height: auto;
+  transition: transform .3s cubic-bezier(0.2, 0, 0.2, 1), box-shadow .3s cubic-bezier(0.2, 0, 0.2, 1), border-color .3s ease;
 }
-.award-image {
-  position: absolute;
-  inset: 0;
-  z-index: -2;
+.awards .award:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 16px 36px rgba(17, 40, 80, 0.12);
+  border-color: rgba(0, 180, 216, 0.35);
+}
+.awards .award-image-wrap {
+  position: relative;
+  width: 100%;
+  height: 220px;
+  overflow: hidden;
+  background: #f1f5f9;
+  flex-shrink: 0;
+}
+.awards .award-image-wrap.contain-wrap {
+  background: #f8fafc;
+  padding: 18px;
+  box-sizing: border-box;
+}
+.awards .award-image {
+  position: static;
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center;
   border-radius: 0;
-  background: #fff;
+  background: transparent;
+  display: block;
+  transition: transform .4s cubic-bezier(0.2, 0, 0.2, 1);
 }
-.awards .award::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  background: linear-gradient(180deg, rgba(8,23,45,.02) 0%, rgba(8,23,45,.15) 25%, rgba(8,23,45,.86) 55%, rgba(8,23,45,.98) 100%);
+.awards .award:hover .award-image {
+  transform: scale(1.045);
 }
-.award-content { padding: 28px; }
+.award-content {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  padding: 24px 22px 26px;
+}
 .awards .award h3 {
-  color: #fff;
-  font-size: clamp(20px, 1.8vw, 24px);
-  line-height: 1.3;
+  color: #17283d;
+  font-size: 18px;
+  font-weight: 750;
+  line-height: 1.35;
+  letter-spacing: -.02em;
+  margin: 0 0 10px;
 }
 .awards .award p {
-  color: #e5eff7;
-  font-size: 14px;
-  line-height: 1.7;
-  margin-top: 12px;
+  color: #4a5e74;
+  font-size: 13.5px;
+  line-height: 1.65;
+  margin: 0;
 }
 
 /* Center section titles while retaining the hero's original alignment. */
@@ -2938,13 +2968,8 @@ main .page-heading > p {
 }
 @media (max-width: 720px) {
   .branch-card-row { margin-bottom: 15px; }
-  .award-content { padding: 24px; }
-  .awards .award { min-height: 500px; }
+  .award-content { padding: 20px; }
 }
-
-/* Match the event image zoom on awards without making cards open dialogs. */
-.awards .award-image { transition: transform .35s ease; }
-.awards .award:hover .award-image { transform: scale(1.035); }
 
 .button.whatsapp-button {
   background: #16843c;
@@ -2989,6 +3014,41 @@ main .page-heading > p {
   box-shadow: 0 12px 28px #1128500a;
 }
 .join-panel > p { line-height: 1.9; margin-top: 24px; }
+.join-steps-list {
+  list-style: none;
+  counter-reset: step-counter;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 680px;
+  margin: 28px auto 32px;
+  padding: 0;
+  text-align: left;
+}
+.join-steps-list li {
+  counter-increment: step-counter;
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--muted, #42536b);
+}
+.join-steps-list li::before {
+  content: counter(step-counter);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  min-width: 28px;
+  border-radius: 50%;
+  background: var(--tint-cyan);
+  color: var(--ocean);
+  font-weight: 700;
+  font-size: 14px;
+  margin-top: 2px;
+}
 .join-panel .actions { justify-content: center; flex-wrap: wrap; }
 .join-journey-link { display: inline-block; margin-top: 28px; }
 @media (max-width: 1099px) {
@@ -2996,7 +3056,8 @@ main .page-heading > p {
   .chapter-subheading > p, .chapter-subheading .button { grid-column: 1; }
 }
 @media (prefers-reduced-motion: reduce) {
-  .awards .award-image { transition: none; }
+  .awards .award, .awards .award-image { transition: none; }
+  .awards .award:hover { transform: none; }
   .awards .award:hover .award-image { transform: none; }
 }
 

@@ -1,12 +1,16 @@
 import { legacyEvents } from './legacyEvents';
-import career from '../assets/images/global-community.optimized.jpg';
-import leadership from '../assets/images/Events/SLIITXtremeOC.optimized.jpg';
+import ptiImage from '../assets/images/Events/path-to-internship-2026.optimized.jpg';
+import agmImage from '../assets/images/Events/AGM_2026.optimized.jpg';
+import cybershieldImage from '../assets/images/Events/CyberShield_5.0.optimized.jpg';
+import iasOdysseyImage from '../assets/images/Events/IAS_Odyssey.optimized.jpg';
+import embedxImage from '../assets/images/Events/EmbedX_2025.optimized.jpg';
 import hero from '../assets/images/Events/SLIITXtremeOC.optimized.jpg';
+
 export const sampleEvents = [{
   id: 'pti-2026',
   name: 'Path to Internship 2026',
   tag: 'Career & industry',
-  image: career,
+  image: ptiImage,
   status: 'past',
   preview: true,
   description: 'Event highlights'
@@ -14,7 +18,7 @@ export const sampleEvents = [{
   id: 'agm-2026',
   name: 'AGM 2026',
   tag: 'Community & leadership',
-  image: leadership,
+  image: agmImage,
   status: 'past',
   preview: true,
   description: 'Event highlights'
@@ -27,6 +31,64 @@ export const sampleEvents = [{
   preview: true,
   description: 'Event highlights'
 }];
+
+export const allEvents = [
+  {
+    id: 'pti-2026',
+    name: 'Path to Internship 2026',
+    tag: 'Career & industry',
+    image: ptiImage,
+    status: 'past',
+    preview: true,
+    description: 'Event highlights'
+  },
+  {
+    id: 'agm-2026',
+    name: 'AGM 2026',
+    tag: 'Community & leadership',
+    image: agmImage,
+    status: 'past',
+    preview: true,
+    description: 'Event highlights'
+  },
+  {
+    id: 'cybershield-5',
+    name: 'Cybershield 5.0',
+    tag: 'Cybersecurity & innovation',
+    image: cybershieldImage,
+    status: 'past',
+    preview: true,
+    description: 'Event highlights'
+  },
+  {
+    id: 'ias-odyssey',
+    name: 'IAS Odyssey',
+    tag: 'Industry & technology',
+    image: iasOdysseyImage,
+    status: 'past',
+    preview: true,
+    description: 'Event highlights'
+  },
+  {
+    id: 'embedx-2025',
+    name: 'Embedx 2025',
+    tag: 'Embedded systems & robotics',
+    image: embedxImage,
+    status: 'past',
+    preview: true,
+    description: 'Event highlights'
+  },
+  {
+    id: 'sliitxtreme-4',
+    name: 'SLIITXtreme 4.0',
+    tag: 'Connection & celebration',
+    image: hero,
+    status: 'past',
+    preview: true,
+    description: 'Event highlights'
+  },
+  ...legacyEvents
+];
 export function eventsEndpoint() {
   const base = (import.meta.env.VITE_API_URL || '').trim();
   if (!base) return import.meta.env.VITE_EVENTS_API_ENABLED === 'true' ? '/api/get/events/IEEESB' : null;
@@ -121,4 +183,4 @@ export function formatEventDate(value) {
 }
 
 // Keep document-based flagship highlights alongside the original V2 archive.
-export const galleryEvents = [...sampleEvents, ...legacyEvents];
+export const galleryEvents = allEvents;

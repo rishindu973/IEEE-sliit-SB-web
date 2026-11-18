@@ -2,7 +2,7 @@ import outstanding from '../../assets/images/Awards/outstanding-sb.jpeg';
 import membership from '../../assets/images/Awards/membership-recruitment.jpeg';
 import perpetual from '../../assets/images/Awards/perpetual.jpg.jpeg';
 import darrelChong from '../../assets/images/Awards/Darrel-Chong.jpg.jpeg';
-import exemplary from '../../assets/images/Awards/exemplary-student-branch-2025.png';
+import exemplary from '../../assets/images/Awards/exemplary-student-branch-2025.optimized.jpg';
 
 // Award titles, order and descriptions supplied in SB Website.md.
 export const AwardCardsInfo = [
@@ -15,7 +15,7 @@ export const AwardCardsInfo = [
     description: 'The IEEE Student Branch of SLIIT received the Special Recognition for Membership Recruitment & Retention at the IEEE Sri Lanka Section Awards 2026, acknowledging its remarkable efforts in expanding IEEE membership, retaining existing members, and fostering an active and engaged student community.'
   },
   {
-    title: 'IEEE Regional Exemplary Student Branch Award – 2025', image: exemplary, imageFit: 'contain',
+    title: 'IEEE Regional Exemplary Student Branch Award – 2025', image: exemplary,
     description: 'The IEEE Student Branch of SLIIT proudly received the prestigious IEEE Regional Exemplary Student Branch Award 2025, recognizing its outstanding achievements in leadership, student engagement, innovative initiatives, and continued commitment to IEEE excellence at the international level.'
   },
   {
